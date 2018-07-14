@@ -20,16 +20,20 @@ public class HappyPet {
 
 			// 5. Use user input to call the appropriate method created in step 4.
 			while (0==0) {
-				if (task == 1) {
+			 if (task == 0) {
 					feedPet();
 				}
-				if (task == 2) {
+			 if (task == 1) {
 					waterPet();
 				}
-				if (task == 3) {
+			 if (task == 2) {
 					walkPet();
 				}
-				
+				else if (happinessLevel > 20) {
+					break;
+				}
+			 task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy", "Pet Tasks", 0, JOptionPane.INFORMATION_MESSAGE, null,
+						new String[] { "feed", "water", "walk" }, null);
 			}
 			// 6. If you determine the happiness level is large enough, tell the
 			//    user that he loves his pet and use break; to exit for loop.
@@ -51,5 +55,6 @@ public class HappyPet {
 	
 	public static void walkPet() {
 		JOptionPane.showMessageDialog(null, "Your pet is now ripped");
+		happinessLevel=happinessLevel + 3;
 	}
 }
